@@ -13,10 +13,25 @@ function sendObjectToDevTools (message) {
 
 function getAppData () {
   console.log('getAppData')
+  // window.postMessage({
+  //   data: {},
+  //   command: 'GET_APP_DATA',
+  //   to: 'appservice'
+  // }, '*')
+
   window.postMessage({
-    data: {},
-    command: 'GET_APP_DATA',
-    to: 'appservice'
+    data: {
+
+    },
+    sdkName: 'GET_APP_DATA',
+    command: 'COMMAND_FROM_ASJS',
+    msg: {
+      // data: {},
+      // command: 'GET_APP_DATA',
+      // to: 'appservice'
+    },
+    to: 'backgroundjs'
+
   }, '*')
 }
 
