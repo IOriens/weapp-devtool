@@ -80,7 +80,7 @@ class App extends Component {
     // })
     sendObjectToInspectedPage({
       action: 'script',
-      content: '../../../inserted-script.js'
+      content: 'insertedScript/inserted-script.js'
     })
   }
 
@@ -103,7 +103,6 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <div>ffffffffffffffff</div>
         <div>{JSON.stringify(this.state.appData)}</div>
         <JJSONTree appData={this.state.appData} />
       </div>

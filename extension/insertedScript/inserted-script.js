@@ -12,6 +12,7 @@ function sendObjectToDevTools (message) {
 }
 
 function getAppData () {
+  console.log('getAppData')
   window.postMessage({
     data: {},
     command: 'GET_APP_DATA',
@@ -21,10 +22,11 @@ function getAppData () {
 
 window.addEventListener('message', function (e) {
   var data = e.data || {}
-  // var msg = data.msg
+  var msg = data.msg
   var cmd = data.command
+  console.log(cmd)
   if (cmd === 'SEND_APP_DATA') {
-    // console.log(JSON.stringify(msg, null, 2))
+    console.log(JSON.stringify(msg, null, 2))
     sendObjectToDevTools(data)
   } else if (cmd === 'SHAKE_HANDS') {
     getAppData()

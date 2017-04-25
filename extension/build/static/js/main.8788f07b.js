@@ -11931,7 +11931,7 @@
 	    // })
 	    (0, _messaging.sendObjectToInspectedPage)({
 	      action: 'script',
-	      content: '../../../inserted-script.js'
+	      content: 'insertedScript/inserted-script.js'
 	    });
 	    return _this;
 	  }
@@ -11973,22 +11973,11 @@
 	            },
 	            __self: this
 	          },
-	          'ffffffffffffffff'
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          {
-	            __source: {
-	              fileName: _jsxFileName,
-	              lineNumber: 107
-	            },
-	            __self: this
-	          },
 	          JSON.stringify(this.state.appData)
 	        ),
 	        _react2.default.createElement(_JJSONTree2.default, { appData: this.state.appData, __source: {
 	            fileName: _jsxFileName,
-	            lineNumber: 108
+	            lineNumber: 107
 	          },
 	          __self: this
 	        })
@@ -29602,4 +29591,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=main.0a5b6dc2.js.map
+//# sourceMappingURL=main.8788f07b.js.map

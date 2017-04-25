@@ -11,11 +11,15 @@ chrome.extension.onConnect.addListener(function (port) {
     if (message.tabId && message.content) {
       // Evaluate script in inspectedPage
       if (message.action === 'code') {
-        chrome.tabs.executeScript(message.tabId, {code: message.content})
+        chrome.tabs.executeScript(message.tabId, {
+          code: message.content
+        })
 
         // Attach script to inspectedPage
       } else if (message.action === 'script') {
-        chrome.tabs.executeScript(message.tabId, {file: message.content})
+        chrome.tabs.executeScript(message.tabId, {
+          file: message.content
+        })
 
         // Pass message to inspectedPage
       } else {
@@ -40,8 +44,10 @@ chrome.extension.onConnect.addListener(function (port) {
   chrome.tabs.onUpdated.addListener(function (tabId, change, tab) {
     console.log(arguments)
     if (change.status == 'complete') {
-    // updatePageAction(tabId)
-      // chrome.tabs.executeScript(tabId, {file: 'inserted-script.js'})
+      // updatePageAction(tabId)
+      // chrome.tabs.executeScript(tabId, {
+      //   file: 'inserted-script.js'
+      // })
     }
   })
 
@@ -49,6 +55,7 @@ chrome.extension.onConnect.addListener(function (port) {
   //     port.postMessage(message);
   // });
 })
+
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log(arguments)
   return true
