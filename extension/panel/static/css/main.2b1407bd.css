@@ -1,5 +1,6 @@
 html {
-  /*background-color: rgb(0, 43, 54);*/
+  background-color: rgb(0, 43, 54);
+  font-size: 20px;
 }
 
 .App {
@@ -33,11 +34,13 @@ html {
 }
 .tree-name {
   margin: 10px;
-  color: rgb(38, 139, 210)
-}body {
+  color: rgb(203, 75, 22)
+}
+
+body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 
-/*# sourceMappingURL=main.63900269.css.map*/
+/*# sourceMappingURL=main.2b1407bd.css.map*/

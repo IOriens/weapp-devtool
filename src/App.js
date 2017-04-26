@@ -93,7 +93,6 @@ class App extends Component {
 
     // Listen to messages from the background page
     port.onMessage.addListener(function (message) {
-      console.log(message)
       self.setState({
         appData: message.msg.appData
       })
@@ -103,7 +102,6 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <div>{JSON.stringify(this.state.appData)}</div>
         <JJSONTree appData={this.state.appData} />
       </div>
     )

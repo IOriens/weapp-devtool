@@ -11947,7 +11947,6 @@
 	
 	      // Listen to messages from the background page
 	      port.onMessage.addListener(function (message) {
-	        console.log(message);
 	        self.setState({
 	          appData: message.msg.appData
 	        });
@@ -11960,24 +11959,13 @@
 	        'div',
 	        { className: 'App', __source: {
 	            fileName: _jsxFileName,
-	            lineNumber: 105
+	            lineNumber: 104
 	          },
 	          __self: this
 	        },
-	        _react2.default.createElement(
-	          'div',
-	          {
-	            __source: {
-	              fileName: _jsxFileName,
-	              lineNumber: 106
-	            },
-	            __self: this
-	          },
-	          JSON.stringify(this.state.appData)
-	        ),
 	        _react2.default.createElement(_JJSONTree2.default, { appData: this.state.appData, __source: {
 	            fileName: _jsxFileName,
-	            lineNumber: 107
+	            lineNumber: 105
 	          },
 	          __self: this
 	        })
@@ -12032,7 +12020,8 @@
 	    var _this = _possibleConstructorReturn(this, (JJSONTree.__proto__ || Object.getPrototypeOf(JJSONTree)).call(this, props));
 	
 	    _this.state = {
-	      data: _this.purifyData({ 'page/component/index': { 'list': [{ 'id': 'view', 'name': '视图容器', 'open': false, 'pages': ['view', 'scroll-view', 'swiper'] }, { 'id': 'content', 'name': '基础内容', 'open': false, 'pages': ['text', 'icon', 'progress'] }, { 'id': 'form', 'name': '表单组件', 'open': false, 'pages': ['button', 'checkbox', 'form', 'input', 'label', 'picker', 'radio', 'slider', 'switch', 'textarea'] }, { 'id': 'nav', 'name': '导航', 'open': false, 'pages': ['navigator'] }, { 'id': 'media', 'name': '媒体组件', 'open': false, 'pages': ['image', 'audio', 'video'] }, { 'id': 'map', 'name': '地图', 'pages': ['map'] }, { 'id': 'canvas', 'name': '画布', 'pages': ['canvas'] }], '__webviewId__': 0 } })
+	      appData: _this.props.appData,
+	      data: _this.purifyData(_this.props.appData)
 	    };
 	    return _this;
 	  }
@@ -12055,14 +12044,13 @@
 	  }, {
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
-	      console.log(nextProps);
-	      this.setState({
-	        data: nextProps
-	      });
-	      // Check if it's a new user, you can also use some unique, like the ID
-	      // if (JSON.stringify(this.props.appData) !== JSON.stringify(nextProps.appData)) {
-	      // this.setState({data: this.purifyData(this.props.appData)})
-	      // }
+	      var self = this;
+	      if (JSON.stringify(this.props.appData) !== JSON.stringify(nextProps.appData)) {
+	        this.setState({
+	          appData: nextProps.appData,
+	          data: self.purifyData(nextProps.appData)
+	        });
+	      }
 	    }
 	  }, {
 	    key: 'render',
@@ -12075,17 +12063,6 @@
 	          },
 	          __self: this
 	        },
-	        _react2.default.createElement(
-	          'div',
-	          {
-	            __source: {
-	              fileName: _jsxFileName,
-	              lineNumber: 43
-	            },
-	            __self: this
-	          },
-	          JSON.stringify(this.state.data)
-	        ),
 	        this.state.data.map(function (element) {
 	          return _react2.default.createElement(
 	            'div',
@@ -29606,4 +29583,4 @@
 
 /***/ }
 /******/ ])));
-//# sourceMappingURL=main.2b074f27.js.map
+//# sourceMappingURL=main.734a76f1.js.map

@@ -6,6 +6,6 @@
 chrome.devtools.panels.create(
   'Weapp',
   '../assets/toast.png',
-  '../build/index.html',
+  '../panel/index.html',
   function (panel) {}
 )

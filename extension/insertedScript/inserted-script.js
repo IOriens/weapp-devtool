@@ -1,38 +1,8 @@
-// This is included and executed in the inspected page
-function inserted () {
-  console.log('External script attached')
-}
-inserted()
-
 function sendObjectToDevTools (message) {
   // The callback here can be used to execute something on receipt
   chrome.extension.sendMessage(message, function (message) {
 
   })
-}
-
-function getAppData () {
-  console.log('getAppData')
-  // window.postMessage({
-  //   data: {},
-  //   command: 'GET_APP_DATA',
-  //   to: 'appservice'
-  // }, '*')
-
-  window.postMessage({
-    data: {
-
-    },
-    sdkName: 'GET_APP_DATA',
-    command: 'COMMAND_FROM_ASJS',
-    msg: {
-      // data: {},
-      // command: 'GET_APP_DATA',
-      // to: 'appservice'
-    },
-    to: 'backgroundjs'
-
-  }, '*')
 }
 
 window.addEventListener('message', function (e) {
@@ -47,5 +17,18 @@ window.addEventListener('message', function (e) {
     getAppData()
   }
 }, false)
+
+function getAppData () {
+  window.postMessage({
+    data: {
+    },
+    sdkName: 'GET_APP_DATA',
+    command: 'COMMAND_FROM_ASJS',
+    msg: {
+    },
+    to: 'backgroundjs'
+
+  }, '*')
+}
 
 getAppData()
